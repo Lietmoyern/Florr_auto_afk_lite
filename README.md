@@ -1,7 +1,7 @@
 # florr_auto_afk_lite
 
 ## 项目简介
-florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于MacOS的简化版，原项目https://github.com/Shiny-Ladybug/florr-auto-afk",本简化版只保留了其用于解决afk问题的功能，其他辅助功能都被移除了,本简化版由Lietmoyern制作，只做了简化和重组工程结构而没有增添新的功能。
+florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于MacOS的简化版，原项目https://github.com/Shiny-Ladybug/florr-auto-afk" ,本简化版只保留了其用于解决afk问题的功能，其他辅助功能都被移除了,本简化版由Lietmoyern制作，只做了简化和重组工程结构而没有增添新的功能。
 
 
 ## 使用方法
@@ -111,5 +111,6 @@ florr_auto_afk_lite/
 该项目使用和源项目相同的GPLv3许可证，详见项目根目录下的LICENSE文件。
 
 ## 免责声明
+
 
 此工具仅用于学习和研究目的。使用此工具可能违反马修斯28的服务条款。请在使用前了解并遵守相关规定。作者不对使用此工具可能导致的任何后果负责。
