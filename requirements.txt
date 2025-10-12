@@ -1,4 +1,6 @@
+numpy
 torch
+tensorboard
 torchvision
 ultralytics
 scipy==1.15.3
@@ -8,5 +10,6 @@ rdp
 opencv-contrib-python
 fastapi
 uvicorn
+
 
 

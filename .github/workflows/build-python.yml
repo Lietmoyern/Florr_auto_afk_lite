@@ -47,29 +47,29 @@ jobs:
           cp set_opaque.js dist/
           mkdir -p dist/logs
 
-      - name: Compress files into zip
+      - name: Compress files into tar.gz
         run: |
           cd dist
-          zip -r ../florr_auto_afk_lite_macos.zip .
+          tar -czf ../florr_auto_afk_lite_macos.tar.gz .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: florr_auto_afk_lite_macos
-          path: florr_auto_afk_lite_macos.zip
+          path: florr_auto_afk_lite_macos.tar.gz
           retention-days: 90
 
       - name: Create and Publish Release (on push)
         if: ${{ github.event_name == 'push' }}
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v1.0.0-${{ github.run_number }}
-          name: macOS Build v1.0.0-${{ github.run_number }}
+          tag_name: v1.0.1-${{ github.run_number }}
+          name: macOS Build v1.0.1-${{ github.run_number }}
           body: |
             Automated macOS build
             Commit SHA: ${{ github.sha }}
             Run Number: ${{ github.run_number }}
-          files: florr_auto_afk_lite_macos.zip
+          files: florr_auto_afk_lite_macos.tar.gz
           draft: false
           prerelease: false
           generate_release_notes: true
