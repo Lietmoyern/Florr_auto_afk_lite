@@ -1,0 +1,28 @@
+{
+  "afk_detection": {
+    "interval": 5,
+    "confidence_threshold": 0.7,
+    "window_ratio_tolerance": 0.1,
+    "window_aspect_ratios": [1.0, 0.787]
+  },
+  "mouse": {
+    "speed": 100,
+    "failsafe": true
+  },
+  "keyboard": {
+    "key_press_delay": 0.15
+  },
+  "image_processing": {
+    "rdp_epsilon": "0.2173913043478*width+0.4782608695652",
+    "extend_length": 30,
+    "color_tolerance": 40
+  },
+  "timing": {
+    "page_opacity_wait": 0.5,
+    "post_action_wait": 1,
+    "auto_exit_minutes": -1
+  },
+  "method":{
+    "use_afk_bw": false
+  }
+}

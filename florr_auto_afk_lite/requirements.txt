@@ -1,0 +1,10 @@
+opencv-python
+numpy
+scipy
+pyautogui
+torch
+ultralytics
+scikit-image
+fastapi
+uvicorn
+websockets
