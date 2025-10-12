@@ -45,7 +45,7 @@ florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于Mac
 
 确保已安装所需的Python库：
 ```bash
-pip3 install opencv-python numpy scipy pyautogui torch ultralytics scikit-image fastapi uvicorn websockets rdp
+pip3 install opencv-contrib-python numpy scipy pyautogui torch ultralytics scikit-image fastapi uvicorn rdp
 ```
 
 ```bash
@@ -88,9 +88,10 @@ python main.py
 ### 3. 脚本控制机制
 
 程序启动时会创建一个WebSocket服务器，默认监听`localhost:8765`。油猴脚本`set_opaque.js`通过WebSocket客户端连接到本地服务器，并发送命令控制是否将网页转为黑白
-<div class="warning-box">
-  ⚠️ **警告：** M28正在查封油猴脚本，不建议安装`set_opaque.js·！
-</div>
+
+> [!CAUTION]
+>
+> M28 正在查封油猴脚本，不建议安装`set_opaque.js`脚本。
 
 ## 项目结构
 
