@@ -38,14 +38,14 @@ jobs:
 
       - name: Create executable with PyInstaller
         run: |
-          python -m PyInstaller --onefile --windowed --name florr_auto_afk_lite main.py
+          python -m PyInstaller --onedir --windowed --name florr_auto_afk_lite main.py
 
       - name: Copy necessary files to dist directory
         run: |
-          cp -r models dist/
-          cp config.json dist/
-          cp set_opaque.js dist/
-          mkdir -p dist/logs
+          cp -r models dist/florr_auto_afk_lite.app/Contents/MacOS/
+          cp config.json dist/florr_auto_afk_lite.app/Contents/MacOS/
+          cp set_opaque.js dist/florr_auto_afk_lite.app/Contents/MacOS/
+          mkdir -p dist/florr_auto_afk_lite.app/Contents/MacOS/logs
 
       - name: Compress files into tar.gz
         run: |
