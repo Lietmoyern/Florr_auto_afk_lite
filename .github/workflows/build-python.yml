@@ -1,5 +1,3 @@
-name: Build macOS Executable
-
 on:
   push:
     branches: [ main ]
@@ -58,15 +56,3 @@ jobs:
           name: florr_auto_afk_lite_macos
           path: florr_auto_afk_lite_macos.zip
           retention-days: 90
-
-      - name: Upload Executable to Release (on push)
-        if: ${{ github.event_name == 'push' }}
-        uses: softprops/action-gh-release@v1
-        with:
-          files: florr_auto_afk_lite_macos.zip
-          name: macOS Build ${{ github.sha }}
-          body: 'Automated macOS build'
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
