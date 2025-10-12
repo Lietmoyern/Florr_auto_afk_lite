@@ -1,12 +1,12 @@
-opencv-contrib-python
-scipy==1.15.3
-pyautogui
 torch
-rdp
+torchvision
 ultralytics
+scipy==1.15.3
 scikit-image==0.24.0
+pyautogui
+rdp
+opencv-contrib-python
 fastapi
 uvicorn
-numpy
 
 
