@@ -2,7 +2,7 @@
 
 ## 项目简介
 florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于MacOS的简化版，原项目https://github.com/Shiny-Ladybug/florr-auto-afk" ,本简化版只保留了其用于解决afk问题的功能，其他辅助功能都被移除了,本简化版由Lietmoyern制作，只做了简化和重组工程结构而没有增添新的功能。
-
+在 https://github.com/Lietmoyern/Florr_auto_afk_lite/actions/runs/18441139597#artifacts 下载可执行文件
 
 ## 使用方法
 
@@ -88,6 +88,9 @@ python main.py
 ### 3. 脚本控制机制
 
 程序启动时会创建一个WebSocket服务器，默认监听`localhost:8765`。油猴脚本`set_opaque.js`通过WebSocket客户端连接到本地服务器，并发送命令控制是否将网页转为黑白
+<div class="warning-box">
+  ⚠️ **警告：** M28正在查封油猴脚本，不建议安装`set_opaque.js·！
+</div>
 
 ## 项目结构
 
@@ -114,4 +117,5 @@ florr_auto_afk_lite/
 
 
 此工具仅用于学习和研究目的。使用此工具可能违反马修斯28的服务条款。请在使用前了解并遵守相关规定。作者不对使用此工具可能导致的任何后果负责。
+
 
