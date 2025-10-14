@@ -34,7 +34,7 @@ jobs:
 
       - name: Create executable with PyInstaller
         run: |
-          python -m PyInstaller --onedir --windowed --name florr_auto_afk_lite main.py
+          python -m PyInstaller --onedir --name florr_auto_afk_lite main.py
 
       - name: Copy necessary files to dist directory
         run: |

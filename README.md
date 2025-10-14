@@ -50,19 +50,19 @@ https://github.com/Shiny-Ladybug/florr-auto-afk
 拥有更多的辅助功能和用户界面
 
 #### MacOS：
-然而我没有MacOS设备，所以无法测试和提供MacOS的构建版本。
-而且我没有开发者证书和数字签名，MacOS用户需要通过Python直接运行程序。有两种方式：
+然而我没有MacOS设备和开发者证书，所以无法测试和提供MacOS的构建版本。
+MacOS用户需要通过Python直接运行程序。有两种方式：
 
 **方法一：使用提供的命令脚本**
 1. 打开终端（Terminal）
-2. 导航到程序目录：`cd /path/to/florr_auto_afk_lite`
+2. 导航到程序目录：`cd /path/to/florr_auto_afk_lite`(根据实际路径替换)
 3. 给脚本添加执行权限：`chmod +x run_macos.sh`
 4. 运行脚本：`./run_macos.sh`
 
 **方法二：手动安装和运行**
 确保已安装所需的Python库：
 ```bash
-pip3 install opencv-contrib-python numpy scipy pyautogui torch torchvision ultralytics scikit-image fastapi uvicorn rdp
+pip3 install numpy scipy pyautogui torch torchvision lap ultralytics scikit-image fastapi uvicorn rdp 
 ```
 
 然后运行程序：
@@ -126,7 +126,8 @@ florr_auto_afk_lite/
 │   ├── afk-det.pt     # AFK窗口检测模型
 │   └── afk-seg.pt     # 图像分割模型
 ├── logs/              # 存储截图日志
-├── requirements.txt   # 项目依赖列表
+├── requirements.txt 
+├── run_macos.sh       # 运行脚本（MacOS）
 └── README.md          # 项目说明文档
 ```
 ## 许可证
@@ -136,7 +137,7 @@ florr_auto_afk_lite/
 ## 免责声明
 
 
-此工具仅用于学习和研究目的。使用此工具可能违反马修斯28的服务条款。请在使用前了解并遵守相关规定。作者不对使用此工具可能导致的任何后果负责。
+此工具仅用于学习和研究目的。使用此工具可能违反M28的服务条款。请在使用前了解并遵守相关规定。作者不对使用此工具可能导致的任何后果负责。
 
 
 
