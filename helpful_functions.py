@@ -589,8 +589,10 @@ def execute_afk_bw(afk_window_pos, image,speed=100,
     afk_bw = AFK_BW(image)
     afk_bw.crop_nb_image().normalize().get_mask()
     start_p, end_p = afk_bw.get_start(color_tol=color_tolerance), afk_bw.get_end()
-    if start_p is None or end_p is None:
-        print("No start or end point found")
+    if start_p is None :
+        print("No start point found")
+    elif end_p is None:
+        print("No end point found")
     else:
         afk_bw.dijkstra()
         afk_bw.rdp(round(eval(rdp_epsilon.replace(
