@@ -9,7 +9,7 @@ pyautogui
 rdp
 opencv-contrib-python
 fastapi
-uvicorn
+uvicorn[standard]
 
 
 

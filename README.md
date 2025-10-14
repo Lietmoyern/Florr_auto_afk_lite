@@ -62,7 +62,7 @@ MacOS用户需要通过Python直接运行程序。有两种方式：
 **方法二：手动安装和运行**
 确保已安装所需的Python库：
 ```bash
-pip3 install numpy scipy pyautogui torch torchvision lap ultralytics scikit-image fastapi uvicorn rdp 
+pip3 install numpy scipy pyautogui torch torchvision lap ultralytics scikit-image fastapi uvicorn[standard] rdp 
 ```
 
 然后运行程序：
