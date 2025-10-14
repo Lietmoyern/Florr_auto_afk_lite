@@ -1,6 +1,5 @@
 numpy
 torch
-tensorboard
 torchvision
 ultralytics
 scipy==1.15.3

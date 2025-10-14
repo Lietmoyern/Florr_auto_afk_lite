@@ -1,7 +1,7 @@
 # florr_auto_afk_lite
 
 ## 项目简介
-florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于MacOS的简化版，原项目https://github.com/Shiny-Ladybug/florr-auto-afk" ,本简化版只保留了其用于解决afk问题的功能，其他辅助功能都被移除了,本简化版由Lietmoyern制作，只做了简化和重组工程结构而没有增添新的功能。
+florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于MacOS的简化版，原项目https://github.com/Shiny-Ladybug/florr-auto-afk ,本简化版只保留了其用于解决afk问题的功能，其他辅助功能都被移除了,本简化版由Lietmoyern制作，只做了简化和重组工程结构而没有增添新的功能。
 
 
 ## 使用方法
@@ -43,13 +43,31 @@ florr_auto_afk_lite 是Shiny-Ladybug制作的Florr_Auto_Afk项目为应用于Mac
 
 ### 2. 运行程序
 
+#### Windows：
+下载最新的Windows构建版本，解压后运行`florr_auto_afk_lite.exe`即可。
+但是此项目主要是针对MacOS用户的简化版，Windows用户请直接使用原始项目
+https://github.com/Shiny-Ladybug/florr-auto-afk
+拥有更多的辅助功能和用户界面
+
+#### MacOS：
+然而我没有MacOS设备，所以无法测试和提供MacOS的构建版本。
+而且我没有开发者证书和数字签名，MacOS用户需要通过Python直接运行程序。有两种方式：
+
+**方法一：使用提供的命令脚本**
+1. 打开终端（Terminal）
+2. 导航到程序目录：`cd /path/to/florr_auto_afk_lite`
+3. 给脚本添加执行权限：`chmod +x run_macos.sh`
+4. 运行脚本：`./run_macos.sh`
+
+**方法二：手动安装和运行**
 确保已安装所需的Python库：
 ```bash
-pip3 install opencv-contrib-python numpy scipy pyautogui torch ultralytics scikit-image fastapi uvicorn rdp
+pip3 install opencv-contrib-python numpy scipy pyautogui torch torchvision ultralytics scikit-image fastapi uvicorn rdp
 ```
 
+然后运行程序：
 ```bash
-python main.py
+python3 main.py
 ```
 
 程序启动后，将自动进行以下操作：
@@ -59,6 +77,7 @@ python main.py
 - 检测到AFK窗口时，自动规划路径并执行操作
 - 操作完成后，继续监控
 
+如果在MacOS上运行时遇到问题请和我联系
 ## 工作原理
 
 ### 1. AFK窗口检测流程

@@ -1,4 +1,4 @@
-name: Build macOS Executable
+name: Build Windows Executable
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -32,31 +32,28 @@ jobs:
         run: |
           pip install pyinstaller
 
-      - name: Install torch with CPU support
-        run: |
-          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-
       - name: Create executable with PyInstaller
         run: |
           python -m PyInstaller --onedir --windowed --name florr_auto_afk_lite main.py
 
       - name: Copy necessary files to dist directory
         run: |
-          cp -r models dist/florr_auto_afk_lite.app/Contents/MacOS/
-          cp config.json dist/florr_auto_afk_lite.app/Contents/MacOS/
-          cp set_opaque.js dist/florr_auto_afk_lite.app/Contents/MacOS/
-          mkdir -p dist/florr_auto_afk_lite.app/Contents/MacOS/logs
+          mkdir -p dist\florr_auto_afk_lite\models
+          xcopy models\* dist\florr_auto_afk_lite\models\ /E /I
+          copy config.json dist\florr_auto_afk_lite\
+          copy set_opaque.js dist\florr_auto_afk_lite\
+          mkdir -p dist\florr_auto_afk_lite\logs
 
-      - name: Compress files into tar.gz
+      - name: Compress files into zip
         run: |
           cd dist
-          tar -czf ../florr_auto_afk_lite_macos.tar.gz .
+          powershell Compress-Archive -Path florr_auto_afk_lite -DestinationPath ..\florr_auto_afk_lite_windows.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: florr_auto_afk_lite_macos
-          path: florr_auto_afk_lite_macos.tar.gz
+          name: florr_auto_afk_lite_windows
+          path: florr_auto_afk_lite_windows.zip
           retention-days: 90
 
       - name: Create and Publish Release (on push)
@@ -64,12 +61,12 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v1.0.1-${{ github.run_number }}
-          name: macOS Build v1.0.1-${{ github.run_number }}
+          name: Windows Build v1.0.1-${{ github.run_number }}
           body: |
-            Automated macOS build
+            Automated Windows build
             Commit SHA: ${{ github.sha }}
             Run Number: ${{ github.run_number }}
-          files: florr_auto_afk_lite_macos.tar.gz
+          files: florr_auto_afk_lite_windows.zip
           draft: false
           prerelease: false
           generate_release_notes: true
